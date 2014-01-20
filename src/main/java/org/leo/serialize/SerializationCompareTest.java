@@ -138,7 +138,7 @@ public class SerializationCompareTest {
 			assertEquals(ab.getClass(), AddressBook.class);
 			//System.out.println(ab.getPerson().get(0).getName() + i);
 		}
-		System.out.println("Msgpack\twrite and parse 500 times in "
+		System.out.println("Msgpack\t\twrite and parse 500 times in "
 				+ (System.currentTimeMillis() - now) + "ms, size " + len);
 	}
 	
