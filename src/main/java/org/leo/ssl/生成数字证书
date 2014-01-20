@@ -1,0 +1,14 @@
+服务端应用"服务端私钥"和"客户端公钥"与客户端通讯；
+    客户端应用"客户端私钥"和"服务端公钥"与服务端通讯。
+　  １、用JDK的keytool生成密钥store
+    keytool -genkey -alias serverkey -keystore srvstore    
+    keytool -genkey -alias clientkey -keystore clistore    
+    输入密码（12345678）和相应的证书信息（姓名为DNS或邮件名，国家代码CN）
+    ２、从srvstore中导出证书(bin format)
+    keytool -export -alias serverkey -file srvcert.crt -keystore srvstore 
+ keytool -export -alias clientkey -file clicert.crt -keystore clistore 
+    输入刚才上面设置的密码   
+     ３、将证书导到公钥中
+     keytool -import -alias servertrust -file srvcert.crt -keystore srvtrust 
+  keytool -import -alias clienttrust -file clicert.crt -keystore clitrust 
+     输入公钥的密码（12345678）
