@@ -32,6 +32,21 @@ public class JsonUtils {
 		}
 		return null;
 	}
+	
+	public static <T> T readJsonToObject(Class<T> clazz, byte[] bytes) {
+		if (bytes.length == 0)
+			return null;
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		try {
+			T result = mapper.readValue(bytes, clazz);
+			return result;
+		} catch (Exception e) {
+			logger.error("", e);
+		}
+		return null;
+	}
+	
 	public static <T> T readJsonToObject(TypeReference<T> type, String json){
 		if (StringUtils.isBlank(json))
 			return null;
@@ -95,6 +110,25 @@ public class JsonUtils {
 			CustomSerializerFactory sf = new CustomSerializerFactory();
 			mapper.setSerializerFactory(sf);
 			String data = mapper.writeValueAsString(object);
+			return data;
+		} catch (Exception e) {
+			logger.error("", e);
+		}
+		return null;
+	}
+	
+	public static byte[] writeObjectToBytes(Object object) {
+		if (object == null)	return null;
+		if(object instanceof Map){
+			try{((Map) object).remove(null);}catch(Exception e){}
+		}
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(SerializationConfig.Feature.WRITE_NULL_MAP_VALUES, false);
+
+		try {
+			CustomSerializerFactory sf = new CustomSerializerFactory();
+			mapper.setSerializerFactory(sf);
+			byte[] data = mapper.writeValueAsBytes(object);
 			return data;
 		} catch (Exception e) {
 			logger.error("", e);
