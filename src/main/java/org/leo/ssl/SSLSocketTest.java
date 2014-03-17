@@ -85,7 +85,7 @@ public class SSLSocketTest {
             
             SSLSocket socket = (SSLSocket) ssf.createSocket(host, port);
             socket.startHandshake();
-            //socket IO处理...
+            //socket IO处理.....
 
         } catch (Exception e) {
             e.printStackTrace();
