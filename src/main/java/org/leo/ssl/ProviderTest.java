@@ -23,7 +23,7 @@ public class ProviderTest {
             while (iterator.hasNext()) {
                 System.out.println("Property entry: " + iterator.next());
             }
-            System.out.println("-----------------------------------------------------------");
+            System.out.println("------------------------------------------------------------");
         }
         
 	}
