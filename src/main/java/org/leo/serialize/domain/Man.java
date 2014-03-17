@@ -2,13 +2,14 @@ package org.leo.serialize.domain;
 
 import java.io.Serializable;
 
-public class Student implements Serializable{
+public class Man extends People implements Serializable{
 
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7863405639635202764L;
-	
+	private static final long serialVersionUID = 4634741880940129060L;
+
 	public static String SEX = "M";
 	
 	public transient String stran = "ggg";
@@ -18,10 +19,10 @@ public class Student implements Serializable{
 	
 	private int age;
 	
-	public Student(){
+	public Man(){
 	}
 	
-	public Student(String name, Integer age){
+	public Man(String name, Integer age){
 		this.name = name;
 		this.age = age;
 	}
@@ -41,6 +42,4 @@ public class Student implements Serializable{
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-	
 }
