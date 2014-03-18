@@ -8,9 +8,8 @@ import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.leo.serialize.domain.Man;
 import org.leo.serialize.domain.People;
-import org.leo.serialize.domain.Student;
 
-public class JSerializeTest {
+public class JSerializerTest {
 	
 	@Test
 	public void test(){
@@ -19,7 +18,7 @@ public class JSerializeTest {
 		System.out.println(People.class.getName() + "-" + People.class.getName().length());
 	}
 
-	@Test
+	//@Test
 	public void serialize() throws Exception {
 		Man man = new Man("leo", 18);
 		man.setColor("yellow");
@@ -41,7 +40,7 @@ public class JSerializeTest {
 		in.close();
 		//System.out.println("id=" + people.getId());
 		System.out.println("name=" + man.getName() + ";age=" + man.getAge());
-		System.out.println("SEX=" + Student.SEX + ";stran=" + man.stran);
+		System.out.println("SEX=" + Man.SEX + ";stran=" + man.stran);
 		System.out.println("Color=" + man.getColor());
 	}
 }

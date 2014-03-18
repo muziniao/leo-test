@@ -1,0 +1,14 @@
+package protobuf;
+
+option java_package = "org.leo.serialize.protobuf.domain";
+option java_outer_classname = "ManProtos";
+
+message People {
+  optional string color = 1;
+}
+
+message Man {
+  required string name = 1;
+  required int32 age = 2;
+  optional string color = 3;
+}
