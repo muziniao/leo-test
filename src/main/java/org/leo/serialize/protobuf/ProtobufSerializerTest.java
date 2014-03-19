@@ -8,7 +8,7 @@ import org.leo.serialize.protobuf.domain.ManProtos.Man;
 
 public class ProtobufSerializerTest {
 
-	//@Test
+	@Test
 	public void serialize() throws Exception {
 		Man.Builder man = Man.newBuilder();
 		//Man man = new Man("leo", 18);

@@ -1,0 +1,9 @@
+{"namespace":"org.leo.serialize.avro.domain",
+ "type":"record",
+ "name":"Man",
+ "fields":[
+     {"name":"name","type":"string"},
+     {"name":"age", "type":["int","null"]},
+     {"name":"color","type":["string","null"]}
+ ]
+}
