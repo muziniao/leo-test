@@ -19,7 +19,7 @@ public class Man extends People implements Serializable{
 	
 	private int age;
 	
-	//private String id;
+	////private String id;
 	
 	public Man(){
 	}
