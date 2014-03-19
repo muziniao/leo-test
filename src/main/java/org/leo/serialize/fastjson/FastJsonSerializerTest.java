@@ -25,7 +25,7 @@ public class FastJsonSerializerTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void deserialize() throws Exception {		
 		//FileInputStream is = new FileInputStream("D:\\Temp\\man-jackson.out"); 
 		byte[] byteArr = FileUtils.readFileToByteArray(new File("D:\\Temp\\man-fastJson.out"));

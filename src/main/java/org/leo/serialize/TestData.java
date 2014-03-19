@@ -20,33 +20,36 @@ public class TestData {
 	
 	@Test
 	public void createAddressBook() throws Exception{
-		List<Person> personList = new ArrayList<Person>();
-		for(int i = 1000; i < 1020 ; i++){
-			PhoneNumber pn1 = new PhoneNumber();
-			pn1.setNumber("1000001" + i);
-			pn1.setType(PhoneType.HOME);
-			PhoneNumber pn2 = new PhoneNumber();
-			pn2.setNumber("1000002" + i);
-			pn2.setType(PhoneType.WORK);
+		List<AddressBook> addressBookList = new ArrayList<AddressBook>();		
+		for(int k = 10000; k < 12000; k++){
+			List<Person> personList = new ArrayList<Person>();
+			for(int i = 1000; i < 1005 ; i++){
+				PhoneNumber pn1 = new PhoneNumber();
+				pn1.setNumber(k + "01" + i);//11
+				pn1.setType(PhoneType.HOME);//4
+				PhoneNumber pn2 = new PhoneNumber();
+				pn2.setNumber(k + "02" + i);//11
+				pn2.setType(PhoneType.WORK);//4
 
-			List<PhoneNumber> phone = new ArrayList<PhoneNumber>();
-			phone.add(pn1);
-			phone.add(pn2);
+				List<PhoneNumber> phone = new ArrayList<PhoneNumber>();
+				phone.add(pn1);
+				phone.add(pn2);
 
-			Person person = new Person();
-			person.setName("P0" + i);
-			person.setId(i);
-			person.setEmail("email0" + i);
-			person.setPhone(phone);
-			
-			personList.add(person);
-		}
-		
-		AddressBook ab = new AddressBook();
-		ab.setPerson(personList);		
+				Person person = new Person();
+				person.setName("P" + k + "" + i);//10
+				person.setId(i);//4
+				person.setEmail("E0" + i);//6
+				person.setPhone(phone);
+				
+				personList.add(person);
+			}			
+			AddressBook ab = new AddressBook();
+			ab.setPerson(personList);
+			addressBookList.add(ab);
+		}				
 
-		byte[] bytes = JsonUtils.writeObjectToBytes(ab);
-		FileOutputStream os = new FileOutputStream("D:\\Temp\\test-data-addressBook.out");  
+		byte[] bytes = JsonUtils.writeObjectToBytes(addressBookList);
+		FileOutputStream os = new FileOutputStream("D:\\Temp\\test-data-addressBook-byte-250.out");  
 		os.write(bytes);
 		os.close();
 	}
