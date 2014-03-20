@@ -32,32 +32,30 @@ public class Runner2 {
 
 	public static void main(String[] args) throws Exception {
 		Runner2 runner = new Runner2();
-		runner.run(100);		
+		runner.run(30000);		
 	}
 	
 	public void run(int iterations) throws Exception{
 		setIterations(iterations);
 		loadData();
-		
-		/***/
+		Thread.sleep(2000);
+		/**
 		testJava();	
 		
-		testHessian2();	
-		
+		testHessian2();*/			
 		
 		testDubbo();
-		
+		/**
 		testCodehausJackson();
 		
 		testFastJson();
 		
-		testProtobuf();	
+		testProtobuf();		
 		
-		
-		testAvroSpecific();	
+		testAvroSpecific();		
 		
 		testMsgpack();	
-		/***/	
+		*/	
 		printResult();
 	}
 	
@@ -191,7 +189,7 @@ public class Runner2 {
 	}
 	
 	public void loadData() throws IOException{
-		String json = FileUtils.readFileToString(new File("D:\\Temp\\test-data-addressBook-byte-250.out"));
+		String json = FileUtils.readFileToString(new File("D:\\Temp\\test-data-addressBook-byte-500-3W.out"));
 		this.addressBookList = JsonUtils.readJsonToObjectList(AddressBook.class, json);
 	}
 	

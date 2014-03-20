@@ -21,9 +21,9 @@ public class TestData {
 	@Test
 	public void createAddressBook() throws Exception{
 		List<AddressBook> addressBookList = new ArrayList<AddressBook>();		
-		for(int k = 10000; k < 12000; k++){
+		for(int k = 10000; k < 90000; k++){
 			List<Person> personList = new ArrayList<Person>();
-			for(int i = 1000; i < 1005 ; i++){
+			for(int i = 1000; i < 1003 ; i++){
 				PhoneNumber pn1 = new PhoneNumber();
 				pn1.setNumber(k + "01" + i);//11
 				pn1.setType(PhoneType.HOME);//4
@@ -49,7 +49,7 @@ public class TestData {
 		}				
 
 		byte[] bytes = JsonUtils.writeObjectToBytes(addressBookList);
-		FileOutputStream os = new FileOutputStream("D:\\Temp\\test-data-addressBook-byte-250.out");  
+		FileOutputStream os = new FileOutputStream("D:\\Temp\\test-data-addressBook-byte-150-8W.out");  
 		os.write(bytes);
 		os.close();
 	}
