@@ -18,7 +18,7 @@ public class JSerializerTest {
 		System.out.println(People.class.getName() + "-" + People.class.getName().length());
 	}
 
-	//@Test
+	@Test
 	public void serialize() throws Exception {
 		Man man = new Man("leo", 18);
 		man.setColor("yellow");
