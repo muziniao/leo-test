@@ -36,10 +36,10 @@ public class SocketHttps {
 	public static void testIcbc() throws Exception {
 		String charset = "GBK";
 		String merReqData = "<?xml  version=\"1.0\" encoding=\"GBK\" standalone=\"no\" ?><ICBCAPI><in>"
-				+ "<orderNum>1131219134358117</orderNum>"
-				+ "<tranDate>20131219</tranDate>"
-				+ "<ShopCode>1001EC23819829</ShopCode>"
-				+ "<ShopAccount>1001083319004606417</ShopAccount></in></ICBCAPI>";		
+				+ "<orderNum>3421219134358117</orderNum>"
+				+ "<tranDate>20131268</tranDate>"
+				+ "<ShopCode>1001123819829</ShopCode>"
+				+ "<ShopAccount>100108332123643</ShopAccount></in></ICBCAPI>";	
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("APIName", "EAPI");
 		params.put("APIVersion", "001.001.002.001");
@@ -57,7 +57,7 @@ public class SocketHttps {
 		requestBody.append("="); 
 		requestBody.append(URLEncoder.encode(merReqData, charset));
 		
-		URL url = new URL("https://corporbank.icbc.com.cn/servlet/ICBCINBSEBusinessServlet");
+		URL url = new URL("https://corporbank.docnet.com.cn/servlet/ICBCINBSEBusinessServlet");
 		String host = url.getHost();
 		String path = url.getPath();
 		String param = url.getQuery();
@@ -67,8 +67,8 @@ public class SocketHttps {
 		System.out.println("param----" + param);
 		
         int port = 443;
-        String jksPath = "D:/temp/cer/icbc-remote.jks";
-		char[] jksPassword = "12345678".toCharArray();
+        String jksPath = "D:/temp/cer/test.jks";
+		char[] jksPassword = "test".toCharArray();
         
 		SSLContext ctx = SSLContext.getInstance("SSL");
 		
