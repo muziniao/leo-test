@@ -10,6 +10,7 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 
 import org.junit.Test;
+import org.leo.util.SSLUtils;
 
 public class SSLContextTest {
 	
@@ -36,7 +37,7 @@ public class SSLContextTest {
 
 	@Test
 	public void testHttps() throws Exception{
-		SSLSocketFactory sf = SSLUtils.getSSLSocketFactory("123456", null, "D:/temp/cer/leotest.jks");
+		SSLSocketFactory sf = SSLUtils.getSSLSocketFactory("12345678", null, "D:/temp/certest/leotest.jks");
 		HttpsURLConnection.setDefaultSSLSocketFactory(sf);//以最近一次执行setDefaultSSLSocketFactory有关
 		HttpsURLConnection.setDefaultSSLSocketFactory(SSLUtils.getMySSLSocketFactory("T02"));
 		HttpsURLConnection.setDefaultSSLSocketFactory(SSLUtils.getMySSLSocketFactory("T03"));

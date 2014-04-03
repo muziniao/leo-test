@@ -1,4 +1,4 @@
-package org.leo.http.ssl;
+package org.leo.util;
 
 import java.io.FileInputStream;
 import java.security.KeyStore;
