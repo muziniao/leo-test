@@ -3,6 +3,7 @@ package org.leo.ssl.sample;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,7 +44,13 @@ import org.bouncycastle.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.crypto.util.PublicKeyFactory;
 import org.bouncycastle.jcajce.provider.asymmetric.x509.CertificateFactory;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.openssl.PEMDecryptorProvider;
+import org.bouncycastle.openssl.PEMEncryptedKeyPair;
+import org.bouncycastle.openssl.PEMKeyPair;
+import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.PEMWriter;
+import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
+import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.DefaultDigestAlgorithmIdentifierFinder;
 import org.bouncycastle.operator.DefaultSignatureAlgorithmIdentifierFinder;
@@ -153,7 +160,23 @@ public class CA {
 		KeyPair key = (KeyPair) reader.readObject();
 		return key;
 		*/
-		return null;
+		PEMParser pemParser = new PEMParser(new FileReader(pemPath));
+		Object object = pemParser.readObject();
+		pemParser.close();
+		
+		PEMDecryptorProvider decProv = new JcePEMDecryptorProviderBuilder().build(pemPassword.toCharArray());
+		JcaPEMKeyConverter converter = new JcaPEMKeyConverter().setProvider("BC");
+		
+		KeyPair kp = null;
+		if(object instanceof PEMEncryptedKeyPair){
+			PEMEncryptedKeyPair pemEncryptedKeyPair = (PEMEncryptedKeyPair)object;
+			PEMKeyPair pemKeyPair = pemEncryptedKeyPair.decryptKeyPair(decProv);
+			kp = converter.getKeyPair(pemKeyPair);
+		}else{
+			kp = converter.getKeyPair((PEMKeyPair)object);
+		}
+		
+		return kp;
 	}
 
 	public static X509Certificate getCertificate(String caCertPath)
