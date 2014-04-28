@@ -15,9 +15,9 @@ public class SSLSocketTest2 {
 
 	@Test
 	public void getCer() throws UnknownHostException, IOException {
-		URL url = new URL("https://www.google.com.hk/");
+		URL url = new URL("https://vip.icbc.com.cn/icbc/perbank/index.jsp");
 		String host = url.getHost();  
-		int port = 80;
+		int port = 443;
 		System.out.println(url.toString());
 		System.out.println("host:" + host + ":" + port);
 
