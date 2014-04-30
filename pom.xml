@@ -238,7 +238,9 @@
 					<execution>
 						<phase>generate-sources</phase>
 						<goals>
+							<!--  
 							<goal>schema</goal>
+							-->
 						</goals>
 						<configuration>
 							<sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
