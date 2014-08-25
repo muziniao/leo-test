@@ -2,6 +2,7 @@ package org.leo.test;
 
 import java.io.FileOutputStream;
 
+
 public class Test {
 
 	public static void main(String[] args) throws Exception {
@@ -12,6 +13,7 @@ public class Test {
         fos.write(code);
         fos.flush();
         fos.close();
+        
 	}
 
 }
