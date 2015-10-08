@@ -13,14 +13,27 @@ import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
+import sun.misc.BASE64Encoder;
+import sun.misc.BASE64Decoder;
+
 public class Base64Test {
 
 	@Test
-	public void test() throws UnsupportedEncodingException{
+	public void test() throws IOException{
+		BASE64Decoder dec = new BASE64Decoder();
+		BASE64Encoder enc = new BASE64Encoder(); 
+		
 		String str = "这是科再奇上任CEO以来，首次来华参加IDF峰会。科再奇上任后即展开了对英特尔的转型工作，他在今日的主题演讲中全面阐述了这一转型的思路。他将目前英特尔的战略总结为在各类设备上提供全面的计算体验。";
 		byte[] binaryData = str.getBytes("utf-8");
+		System.out.println(enc.encode(binaryData));
+		System.out.println(new String(dec.decodeBuffer(Base64.encodeBase64URLSafeString(binaryData)), "utf-8"));
+		
 		System.out.println(Base64.encodeBase64URLSafeString(binaryData));
+		//System.out.println(new String(Base64.decodeBase64(Base64.encodeBase64URLSafeString(binaryData)), "utf-8"));
+		
 		System.out.println(Base64.encodeBase64String(binaryData));
+		//System.out.println(new String(Base64.decodeBase64(Base64.encodeBase64String(binaryData)), "utf-8"));
+		
 		System.out.println(new String(Base64.encodeBase64(binaryData), "utf-8"));
 		System.out.println(new String(Base64.encodeBase64(binaryData, true), "utf-8"));
 		System.out.println(new String(Base64.encodeBase64(binaryData, false), "utf-8"));

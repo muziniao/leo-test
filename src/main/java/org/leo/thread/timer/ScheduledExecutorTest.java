@@ -13,7 +13,7 @@ public class ScheduledExecutorTest {
 	public void lanuchTimer() {
 		Runnable task = new Runnable() {
 			public void run() {
-				System.out.println("RuntimeException");
+				System.out.println("RuntimeException.........");
 				throw new RuntimeException();
 			}
 		};
@@ -30,6 +30,19 @@ public class ScheduledExecutorTest {
 		//scheduExec.scheduleWithFixedDelay(task, 1000 * 1, 1000, TimeUnit.MILLISECONDS);
 		scheduExec.schedule(task, 5, TimeUnit.SECONDS);
 	}
+	
+	// 添加新任务
+	public void addLoopTask() {
+		Runnable task = new Runnable() {
+			int i = 0;
+			public void run() {
+				System.out.println("loop : " + i++);
+				throw new RuntimeException();
+			}
+		};
+		//scheduExec.scheduleWithFixedDelay(task, 1000 * 1, 1000, TimeUnit.MILLISECONDS);
+		scheduExec.scheduleAtFixedRate(task, 3, 3, TimeUnit.SECONDS);
+	}
 
 	public static void main(String[] args) throws Exception {
 		System.out.println("-----------start------");
@@ -38,6 +51,7 @@ public class ScheduledExecutorTest {
 		System.out.println("-----------1------");
 		Thread.sleep(1000 * 5);// 5秒钟之后添加新任务
 		test.addOneTask();
+		test.addLoopTask();
 		System.out.println("-----------end------");
 	}
 }

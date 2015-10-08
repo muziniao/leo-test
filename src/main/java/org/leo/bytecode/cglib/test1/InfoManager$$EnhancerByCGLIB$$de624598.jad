@@ -1,0 +1,603 @@
+// Decompiled by Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.geocities.com/kpdus/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   <generated>
+
+package cn.eulic.codelab.cglib;
+
+import java.lang.reflect.Method;
+import net.sf.cglib.core.Signature;
+import net.sf.cglib.proxy.*;
+
+// Referenced classes of package cn.eulic.codelab.cglib:
+//            InfoManager
+
+public class CGLIB.BIND_CALLBACKS extends InfoManager
+    implements Factory
+{
+
+    static void CGLIB$STATICHOOK1()
+    {
+        Class class1;
+        ClassLoader classloader;
+        CGLIB$THREAD_CALLBACKS = new ThreadLocal();
+        classloader = (class1 = Class.forName("cn.eulic.codelab.cglib.InfoManager$$EnhancerByCGLIB$$de624598")).getClassLoader();
+        classloader;
+        CGLIB$emptyArgs = new Object[0];
+        CGLIB$delete$0$Proxy = MethodProxy.create(classloader, (CGLIB$delete$0$Method = Class.forName("cn.eulic.codelab.cglib.InfoManager").getDeclaredMethod("delete", new Class[0])).getDeclaringClass(), class1, "()V", "delete", "CGLIB$delete$0");
+        CGLIB$create$1$Proxy = MethodProxy.create(classloader, (CGLIB$create$1$Method = Class.forName("cn.eulic.codelab.cglib.InfoManager").getDeclaredMethod("create", new Class[0])).getDeclaringClass(), class1, "()V", "create", "CGLIB$create$1");
+        CGLIB$query$2$Proxy = MethodProxy.create(classloader, (CGLIB$query$2$Method = Class.forName("cn.eulic.codelab.cglib.InfoManager").getDeclaredMethod("query", new Class[0])).getDeclaringClass(), class1, "()V", "query", "CGLIB$query$2");
+        CGLIB$update$3$Proxy = MethodProxy.create(classloader, (CGLIB$update$3$Method = Class.forName("cn.eulic.codelab.cglib.InfoManager").getDeclaredMethod("update", new Class[0])).getDeclaringClass(), class1, "()V", "update", "CGLIB$update$3");
+        CGLIB$finalize$4$Proxy = MethodProxy.create(classloader, (CGLIB$finalize$4$Method = Class.forName("java.lang.Object").getDeclaredMethod("finalize", new Class[0])).getDeclaringClass(), class1, "()V", "finalize", "CGLIB$finalize$4");
+        CGLIB$hashCode$5$Proxy = MethodProxy.create(classloader, (CGLIB$hashCode$5$Method = Class.forName("java.lang.Object").getDeclaredMethod("hashCode", new Class[0])).getDeclaringClass(), class1, "()I", "hashCode", "CGLIB$hashCode$5");
+        CGLIB$clone$6$Proxy = MethodProxy.create(classloader, (CGLIB$clone$6$Method = Class.forName("java.lang.Object").getDeclaredMethod("clone", new Class[0])).getDeclaringClass(), class1, "()Ljava/lang/Object;", "clone", "CGLIB$clone$6");
+        CGLIB$equals$7$Proxy = MethodProxy.create(classloader, (CGLIB$equals$7$Method = Class.forName("java.lang.Object").getDeclaredMethod("equals", new Class[] {
+            Class.forName("java.lang.Object")
+        })).getDeclaringClass(), class1, "(Ljava/lang/Object;)Z", "equals", "CGLIB$equals$7");
+        CGLIB$toString$8$Proxy = MethodProxy.create(classloader, (CGLIB$toString$8$Method = Class.forName("java.lang.Object").getDeclaredMethod("toString", new Class[0])).getDeclaringClass(), class1, "()Ljava/lang/String;", "toString", "CGLIB$toString$8");
+        return;
+    }
+
+    final void CGLIB$delete$0()
+    {
+        super.delete();
+    }
+
+    public final void delete()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_21;
+_L4:
+        break MISSING_BLOCK_LABEL_37;
+        this;
+        CGLIB$delete$0$Method;
+        CGLIB$emptyArgs;
+        CGLIB$delete$0$Proxy;
+        intercept();
+        return;
+        super.delete();
+        return;
+    }
+
+    final void CGLIB$create$1()
+    {
+        super.create();
+    }
+
+    public final void create()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_21;
+_L4:
+        break MISSING_BLOCK_LABEL_37;
+        this;
+        CGLIB$create$1$Method;
+        CGLIB$emptyArgs;
+        CGLIB$create$1$Proxy;
+        intercept();
+        return;
+        super.create();
+        return;
+    }
+
+    final void CGLIB$query$2()
+    {
+        super.query();
+    }
+
+    public final void query()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_21;
+_L4:
+        break MISSING_BLOCK_LABEL_37;
+        this;
+        CGLIB$query$2$Method;
+        CGLIB$emptyArgs;
+        CGLIB$query$2$Proxy;
+        intercept();
+        return;
+        super.query();
+        return;
+    }
+
+    final void CGLIB$update$3()
+    {
+        super.update();
+    }
+
+    public final void update()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_21;
+_L4:
+        break MISSING_BLOCK_LABEL_37;
+        this;
+        CGLIB$update$3$Method;
+        CGLIB$emptyArgs;
+        CGLIB$update$3$Proxy;
+        intercept();
+        return;
+        super.update();
+        return;
+    }
+
+    final void CGLIB$finalize$4()
+        throws Throwable
+    {
+        super.finalize();
+    }
+
+    protected final void finalize()
+        throws Throwable
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_21;
+_L4:
+        break MISSING_BLOCK_LABEL_37;
+        this;
+        CGLIB$finalize$4$Method;
+        CGLIB$emptyArgs;
+        CGLIB$finalize$4$Proxy;
+        intercept();
+        return;
+        super.finalize();
+        return;
+    }
+
+    final int CGLIB$hashCode$5()
+    {
+        return super.hashCode();
+    }
+
+    public final int hashCode()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 52;
+           goto _L3 _L4
+_L3:
+        this;
+        CGLIB$hashCode$5$Method;
+        CGLIB$emptyArgs;
+        CGLIB$hashCode$5$Proxy;
+        intercept();
+        JVM INSTR dup ;
+        JVM INSTR ifnonnull 45;
+           goto _L5 _L6
+_L5:
+        JVM INSTR pop ;
+        0;
+          goto _L7
+_L6:
+        (Number);
+        intValue();
+_L7:
+        return;
+_L4:
+        return super.hashCode();
+    }
+
+    final Object CGLIB$clone$6()
+        throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
+
+    protected final Object clone()
+        throws CloneNotSupportedException
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 37;
+           goto _L3 _L4
+_L3:
+        this;
+        CGLIB$clone$6$Method;
+        CGLIB$emptyArgs;
+        CGLIB$clone$6$Proxy;
+        intercept();
+        return;
+_L4:
+        return super.clone();
+    }
+
+    final boolean CGLIB$equals$7(Object obj)
+    {
+        return super.equals(obj);
+    }
+
+    public final boolean equals(Object obj)
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 57;
+           goto _L3 _L4
+_L3:
+        this;
+        CGLIB$equals$7$Method;
+        new Object[] {
+            obj
+        };
+        CGLIB$equals$7$Proxy;
+        intercept();
+        JVM INSTR dup ;
+        JVM INSTR ifnonnull 50;
+           goto _L5 _L6
+_L5:
+        JVM INSTR pop ;
+        false;
+          goto _L7
+_L6:
+        (Boolean);
+        booleanValue();
+_L7:
+        return;
+_L4:
+        return super.equals(obj);
+    }
+
+    final String CGLIB$toString$8()
+    {
+        return super.toString();
+    }
+
+    public final String toString()
+    {
+        CGLIB$CALLBACK_0;
+        if(CGLIB$CALLBACK_0 != null) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        CGLIB$BIND_CALLBACKS(this);
+        CGLIB$CALLBACK_0;
+_L2:
+        JVM INSTR dup ;
+        JVM INSTR ifnull 40;
+           goto _L3 _L4
+_L3:
+        this;
+        CGLIB$toString$8$Method;
+        CGLIB$emptyArgs;
+        CGLIB$toString$8$Proxy;
+        intercept();
+        (String);
+        return;
+_L4:
+        return super.toString();
+    }
+
+    public static MethodProxy CGLIB$findMethodProxy(Signature signature)
+    {
+        String s = signature.toString();
+        s;
+        s.hashCode();
+        JVM INSTR lookupswitch 9: default 200
+    //                   -1949253108: 92
+    //                   -1574182249: 104
+    //                   -1166709331: 116
+    //                   -508378822: 128
+    //                   -358764054: 140
+    //                   598313209: 152
+    //                   1826985398: 164
+    //                   1913648695: 176
+    //                   1984935277: 188;
+           goto _L1 _L2 _L3 _L4 _L5 _L6 _L7 _L8 _L9 _L10
+_L2:
+        "update()V";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L11 _L12
+_L12:
+        break MISSING_BLOCK_LABEL_201;
+_L11:
+        return CGLIB$update$3$Proxy;
+_L3:
+        "finalize()V";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L13 _L14
+_L14:
+        break MISSING_BLOCK_LABEL_201;
+_L13:
+        return CGLIB$finalize$4$Proxy;
+_L4:
+        "query()V";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L15 _L16
+_L16:
+        break MISSING_BLOCK_LABEL_201;
+_L15:
+        return CGLIB$query$2$Proxy;
+_L5:
+        "clone()Ljava/lang/Object;";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L17 _L18
+_L18:
+        break MISSING_BLOCK_LABEL_201;
+_L17:
+        return CGLIB$clone$6$Proxy;
+_L6:
+        "delete()V";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L19 _L20
+_L20:
+        break MISSING_BLOCK_LABEL_201;
+_L19:
+        return CGLIB$delete$0$Proxy;
+_L7:
+        "create()V";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L21 _L22
+_L22:
+        break MISSING_BLOCK_LABEL_201;
+_L21:
+        return CGLIB$create$1$Proxy;
+_L8:
+        "equals(Ljava/lang/Object;)Z";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L23 _L24
+_L24:
+        break MISSING_BLOCK_LABEL_201;
+_L23:
+        return CGLIB$equals$7$Proxy;
+_L9:
+        "toString()Ljava/lang/String;";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L25 _L26
+_L26:
+        break MISSING_BLOCK_LABEL_201;
+_L25:
+        return CGLIB$toString$8$Proxy;
+_L10:
+        "hashCode()I";
+        equals();
+        JVM INSTR ifeq 201;
+           goto _L27 _L28
+_L28:
+        break MISSING_BLOCK_LABEL_201;
+_L27:
+        return CGLIB$hashCode$5$Proxy;
+_L1:
+        JVM INSTR pop ;
+        return null;
+    }
+
+    public static void CGLIB$SET_THREAD_CALLBACKS(Callback acallback[])
+    {
+        CGLIB$THREAD_CALLBACKS.set(acallback);
+    }
+
+    public static void CGLIB$SET_STATIC_CALLBACKS(Callback acallback[])
+    {
+        CGLIB$STATIC_CALLBACKS = acallback;
+    }
+
+    private static final void CGLIB$BIND_CALLBACKS(Object obj)
+    {
+        CGLIB.STATIC_CALLBACKS static_callbacks = (CGLIB.STATIC_CALLBACKS)obj;
+        if(static_callbacks.CGLIB$BOUND) goto _L2; else goto _L1
+_L1:
+        Object obj1;
+        static_callbacks.CGLIB$BOUND = true;
+        obj1 = CGLIB$THREAD_CALLBACKS.get();
+        obj1;
+        if(obj1 != null) goto _L4; else goto _L3
+_L3:
+        JVM INSTR pop ;
+        CGLIB$STATIC_CALLBACKS;
+        if(CGLIB$STATIC_CALLBACKS != null) goto _L4; else goto _L5
+_L5:
+        JVM INSTR pop ;
+          goto _L2
+_L4:
+        (Callback[]);
+        static_callbacks;
+        JVM INSTR swap ;
+        0;
+        JVM INSTR aaload ;
+        (MethodInterceptor);
+        CGLIB$CALLBACK_0;
+_L2:
+    }
+
+    public Object newInstance(Callback acallback[])
+    {
+        CGLIB$SET_THREAD_CALLBACKS(acallback);
+        CGLIB$SET_THREAD_CALLBACKS(null);
+        return new <init>();
+    }
+
+    public Object newInstance(Callback callback)
+    {
+        CGLIB$SET_THREAD_CALLBACKS(new Callback[] {
+            callback
+        });
+        CGLIB$SET_THREAD_CALLBACKS(null);
+        return new <init>();
+    }
+
+    public Object newInstance(Class aclass[], Object aobj[], Callback acallback[])
+    {
+        CGLIB$SET_THREAD_CALLBACKS(acallback);
+        JVM INSTR new #2   <Class InfoManager$$EnhancerByCGLIB$$de624598>;
+        JVM INSTR dup ;
+        aclass;
+        aclass.length;
+        JVM INSTR tableswitch 0 0: default 35
+    //                   0 28;
+           goto _L1 _L2
+_L2:
+        JVM INSTR pop ;
+        <init>();
+          goto _L3
+_L1:
+        JVM INSTR pop ;
+        throw new IllegalArgumentException("Constructor not found");
+_L3:
+        CGLIB$SET_THREAD_CALLBACKS(null);
+        return;
+    }
+
+    public Callback getCallback(int i)
+    {
+        CGLIB$BIND_CALLBACKS(this);
+        this;
+        i;
+        JVM INSTR tableswitch 0 0: default 30
+    //                   0 24;
+           goto _L1 _L2
+_L2:
+        CGLIB$CALLBACK_0;
+          goto _L3
+_L1:
+        JVM INSTR pop ;
+        null;
+_L3:
+        return;
+    }
+
+    public void setCallback(int i, Callback callback)
+    {
+        this;
+        callback;
+        i;
+        JVM INSTR tableswitch 0 0: default 29
+    //                   0 20;
+           goto _L1 _L2
+_L2:
+        (MethodInterceptor);
+        CGLIB$CALLBACK_0;
+          goto _L3
+_L1:
+        JVM INSTR pop2 ;
+_L3:
+    }
+
+    public Callback[] getCallbacks()
+    {
+        CGLIB$BIND_CALLBACKS(this);
+        this;
+        return (new Callback[] {
+            CGLIB$CALLBACK_0
+        });
+    }
+
+    public void setCallbacks(Callback acallback[])
+    {
+        this;
+        acallback;
+        JVM INSTR dup2 ;
+        0;
+        JVM INSTR aaload ;
+        (MethodInterceptor);
+        CGLIB$CALLBACK_0;
+    }
+
+    private boolean CGLIB$BOUND;
+    private static final ThreadLocal CGLIB$THREAD_CALLBACKS;
+    private static final Callback CGLIB$STATIC_CALLBACKS[];
+    private MethodInterceptor CGLIB$CALLBACK_0;
+    private static final Method CGLIB$delete$0$Method;
+    private static final MethodProxy CGLIB$delete$0$Proxy;
+    private static final Object CGLIB$emptyArgs[];
+    private static final Method CGLIB$create$1$Method;
+    private static final MethodProxy CGLIB$create$1$Proxy;
+    private static final Method CGLIB$query$2$Method;
+    private static final MethodProxy CGLIB$query$2$Proxy;
+    private static final Method CGLIB$update$3$Method;
+    private static final MethodProxy CGLIB$update$3$Proxy;
+    private static final Method CGLIB$finalize$4$Method;
+    private static final MethodProxy CGLIB$finalize$4$Proxy;
+    private static final Method CGLIB$hashCode$5$Method;
+    private static final MethodProxy CGLIB$hashCode$5$Proxy;
+    private static final Method CGLIB$clone$6$Method;
+    private static final MethodProxy CGLIB$clone$6$Proxy;
+    private static final Method CGLIB$equals$7$Method;
+    private static final MethodProxy CGLIB$equals$7$Proxy;
+    private static final Method CGLIB$toString$8$Method;
+    private static final MethodProxy CGLIB$toString$8$Proxy;
+
+    static 
+    {
+        CGLIB$STATICHOOK1();
+    }
+
+    public ()
+    {
+        CGLIB$BIND_CALLBACKS(this);
+    }
+}

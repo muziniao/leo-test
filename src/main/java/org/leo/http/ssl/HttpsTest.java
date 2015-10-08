@@ -4,14 +4,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.net.URLDecoder;
 import java.security.KeyStore;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
@@ -25,7 +26,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLContextBuilder;
 import org.apache.http.conn.ssl.SSLContexts;
-import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -42,6 +42,7 @@ public class HttpsTest {
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
+		
 		testIcbc();
 		
 		/**
@@ -61,21 +62,21 @@ public class HttpsTest {
 	}
 
 	public static void testIcbc() throws Exception  {
-		String charset = "GBK";
+		String charset = "GBK";		
 		String merReqData = "<?xml  version=\"1.0\" encoding=\"GBK\" standalone=\"no\" ?><ICBCAPI><in>"
-				+ "<orderNum>3421219134358117</orderNum>"
-				+ "<tranDate>20131268</tranDate>"
-				+ "<ShopCode>1001123819829</ShopCode>"
-				+ "<ShopAccount>100108332123643</ShopAccount></in></ICBCAPI>";
+				+ "<orderNum>Test20150407110859</orderNum>"
+				+ "<tranDate>20150407</tranDate>"
+				+ "<ShopCode>1001EC23820830</ShopCode>"
+				+ "<ShopAccount>1001083319004606417</ShopAccount>" + "</in></ICBCAPI>";
 		
-		String url = "https://corporbank.docnet.com.cn/servlet/ICBCINBSEBusinessServlet";
+		String url = "https://corporbank3.dccnet.com.cn/servlet/ICBCINBSEBusinessServlet";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("APIName", "EAPI");
 		params.put("APIVersion", "001.001.002.001");
 		params.put("MerReqData", merReqData);
 		
-		String jksPath = "D:/temp/cer/test.jks";
-		char[] jksPassword = "test".toCharArray();
+		String jksPath = "D:/temp/cer/icbc.test.wap0402.jks";
+		char[] jksPassword = "12345678".toCharArray();
 		
 		System.out.println(KeyStore.getDefaultType());
 		KeyStore jks = KeyStore.getInstance(KeyStore.getDefaultType());
@@ -89,18 +90,27 @@ public class HttpsTest {
 		SSLContextBuilder scb = SSLContexts.custom();
 		scb.useSSL();
 		scb.loadKeyMaterial(jks, jksPassword);
-		//scb.loadTrustMaterial(jks);
+		scb.loadTrustMaterial(jks);
+		/**
 		scb.loadTrustMaterial(jks, new TrustStrategy(){
 			public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException{
 				return true;				
 			}
 		});
+		*/
 		
 		SSLContext sslcontext = scb.build();
-
+		/*
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
 				sslcontext,
-				SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+				SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);*/
+		
+		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
+                sslcontext,
+                new String[] {"TLSv1", "SSLv3"},
+                null,
+                SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+		
 		CloseableHttpClient httpclient = HttpClients.custom()
 				.setSSLSocketFactory(sslsf).build();
 		try {

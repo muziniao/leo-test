@@ -9,6 +9,6 @@ public enum WeekDay2 {
 	}
 
 	private WeekDay2(int i) {
-		System.out.println("带参数的构造方法 !");
+		System.out.println("带参数的构造方法 !" + i);
 	}
 }
